@@ -11,7 +11,261 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+/* 
+.curr{
+  color: azure;
+  font-weight: normal;
+  font-size: 89px;
+} */
+
+.homesection{
+  background-image: url('F:\PortFolio\portfolio_mayank\src\assets\banner-scaled.jpg');
+}
+
+.wave {
+  animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
+  animation-duration: 2.1s; /* Change to speed up or slow down */
+  animation-iteration-count: infinite; /* Never stop waving :) */
+  transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
+  display: inline-block;
+}
+
+@keyframes wave-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  } /* The following five values can be played with to make the waving more or less extreme */
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  } /* Reset for the last half to pause */
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #0f0f0f;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+.hover-underline {
+  font-size: 1.1rem;
+  color: white;
+  position: relative;
+  display: flex;
+  transition: all 0.8s ease-out;
+}
+
+.hover-underline:hover
+{
+  color: #55e6a5;
+  scale: 0.95;
+  transition: all 0.8s ease-out;
+}
+
+.hover-underline::after,
+.hover-underline::before {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, #55e6a5,white );
+  bottom: -5px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease-out;
+}
+
+.hover-underline::before {
+  top: -5px;
+  transform-origin: left;
+}
+
+.hover-underline:hover::after,
+.hover-underline:hover::before {
+  transform: scaleX(1);
+}
+
+.curr{
+  color:#55e6a5 ;
+  font-size: larger;
+}
+
+.curs{
+  color:#55e6a5 ;
+  font-size: larger;
+
+}
+
+.btn {
+  position: relative;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background: none;
+  border: 2px solid #55e6a5;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.liquid {
+  background: linear-gradient(#55e6a5 0 0) no-repeat calc(200% - var(--p, 0%))
+    100% / 200% var(--p, 0.2em);
+  transition: 0.3s var(--t, 0s),
+    background-position 0.3s calc(0.3s - var(--t, 0s));
+}
+
+.liquid:hover {
+  --p: 100%;
+  --t: 0.3s;
+  color: #fff;
+}
+
+.frame {
+  animation-name: up-down;
+  animation-timing-function: ease-in-out; /* Smooth transition */
+  animation-duration: 3s; /* Adjust as needed */
+  animation-iteration-count: infinite; /* Loop forever */
+}
+
+@keyframes up-down {
+  0% {
+    transform: translateY(27px) translateX(176px); /* Moves up */
+  }
+  50% {
+    transform: translateY(37px) translateX(176px); /* Moves down */
+  }
+  100% {
+    transform: translateY(27px) translateX(176px); /* Moves back up */
+  }
+}
+
+.navv{
+  background: rgba(20, 28, 39, 0.8); 
+  backdrop-filter: blur(10px);
+}
+
+.holographic-card {
+  width: 225px;
+  height: 130px;
+  background: rgba(20, 28, 39, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #55e6a5;
+  padding: 10px;    
+  transition: all 0.5s ease;
+  border-radius: 8px;
+}
+
+.holographic-card h2 {
+  color: #55e6a5;
+  font-size: 4rem;
+  position: relative;
+  z-index: 2;
+}
+
+.holographic-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    0deg, 
+    transparent, 
+    transparent 30%, 
+    rgba(85, 230, 165, 0.5)
+  );
+  transform: rotate(-45deg);
+  transition: all 0.5s ease;
+  opacity: 0;
+}
+
+.holographic-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px  rgba(85, 230, 165, 0.5);
+}
+
+.holographic-card:hover::before {
+  opacity: 1;
+  transform: rotate(-45deg) translateY(100%);
+}
+
+
+.menu-item {
+  display: inline-block;
+  position: relative;
+}
+
+.menu-item a {
+  text-decoration: none;
+  padding: 6px 10px;
+  
+  display: block;
+}
+
+.drop-menu {
+  display: none;
+  position: absolute;
+}
+
+.drop-menu-item a{
+  transition: all;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in;
+}
+
+
+.drop-menu-item a:hover {
+  scale: 1.1;
+  color: #adf7bc;
+  transition: all;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in;
+}
+
+.drop-menu-item a {
+  color: #55e6a5;
+}
+
+.menu-item:hover .drop-menu {
+  display: flex;
+  flex-direction: column;
 }

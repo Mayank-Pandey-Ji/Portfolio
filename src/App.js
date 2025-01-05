@@ -8,6 +8,7 @@ import {BrowserRouter , Routes , Route , Navigate } from 'react-router-dom';
 function App() {
   return (
     <BrowserRouter>
+      <div className='App ' >
       <Routes>
         <Route path='/' element = {<Greet/>} />
         <Route path='/home' element = {<Home/>} />
@@ -17,6 +18,7 @@ function App() {
         <Route path='/project' element = {<Project/>} />
 
       </Routes>
+      </div>
     </BrowserRouter>
   );
 }
