@@ -141,6 +141,8 @@ body {
   transition: all 0.3s ease;
 }
 
+
+
 .liquid {
   background: linear-gradient(#55e6a5 0 0) no-repeat calc(200% - var(--p, 0%))
     100% / 200% var(--p, 0.2em);
@@ -269,3 +271,12 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+input:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.2); /* Blue color with 50% opacity */
+  border: none; /* Optional, if no border is needed */
+}
+
+
+
+

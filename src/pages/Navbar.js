@@ -52,7 +52,7 @@ const Navbar = () => {
             <div class="menu-wrap">
                 <ul class="menu">
                     <li class="menu-item w-44">
-                        <a className='hover-underline' href="#"><Typewriter
+                        <a className='hover-underline'href='#' ><Typewriter
                               options={{
                                 strings: ['Coding Platforms '],
                                 autoStart: true,
@@ -62,13 +62,13 @@ const Navbar = () => {
                           /></a>
                         <ul class="drop-menu">
                             <li class="drop-menu-item">
-                                <a  target='_blank' href="https://leetcode.com/u/mayank_pandey_ji/"><div className='flex items-center gap-3'><SiLeetcode/> LeetCode</div></a>
+                                <a  target='_blank' rel="noopener noreferrer" href="https://leetcode.com/u/mayank_pandey_ji/"><div className='flex items-center gap-3'><SiLeetcode/> LeetCode</div></a>
                             </li>
                             <li class="drop-menu-item">
-                                <a target='_blank' href="https://www.codechef.com/users/mayank_pandey1"><div className='flex items-center gap-3'><SiCodechef/> CodeChef</div></a>
+                                <a target='_blank' rel="noopener noreferrer" href="https://www.codechef.com/users/mayank_pandey1"><div className='flex items-center gap-3'><SiCodechef/> CodeChef</div></a>
                             </li>
                             <li class="drop-menu-item">
-                                <a target='_blank' href="https://codeforces.com/profile/mayank_pandey_ji"><div className='flex items-center  gap-3'><SiCodeforces/> Codeforces</div></a>
+                                <a target='_blank' rel="noopener noreferrer" href="https://codeforces.com/profile/mayank_pandey_ji"><div className='flex items-center  gap-3'><SiCodeforces/> Codeforces</div></a>
                             </li>
                         </ul>
                     </li>
