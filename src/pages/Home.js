@@ -4,13 +4,14 @@ import Navbar from './Navbar'
 import Typewriter from 'typewriter-effect';
 import profile from '../assets/profile.png';
 import download from '../assets/download.png'
+import Footer from './Footer';
 
 const Home = () => {
  
   return (
-    <div className=" homesection bg-cover bg-center h-screen text-green-300 flex flex-col items-center w-screen" >
+    <div className=" homesection bg-cover bg-center min-h-screen text-green-300 flex flex-col items-center w-screen" >
       <Navbar/>
-        <div className=' flex pt-[3rem]  max-w-[1300px] items-center justify-between'>
+        <div className=' flex mt-[9rem]  max-w-[1300px] items-center justify-between'>
             <div className="leftpart flex flex-col w-[50%] ">
                 <div className="intro flex flex-col gap-4">
                   <h1 className='flex items-center'>
@@ -53,7 +54,7 @@ const Home = () => {
                 I’m a 3rd-year BTech student in Electronics, passionate about web development and problem-solving. Proficient in the MERN stack and DSA, I’m honing my skills on platforms like LeetCode and CodeChef. Beyond coding, I love football, sketching, and gaming, and I’ve mentored over 10,000 students as a tutor. I’m always eager to learn, grow, and collaborate to build impactful solutions.
                 </div>
 
-                <div className="resume pt-7">
+                <div className="resume mt-7">
                       <button className=' liquid btn'>
                               download resume
                       </button>
@@ -66,6 +67,7 @@ const Home = () => {
             </div>
         </div>
 
+      <Footer/>
 
     </div>
   )

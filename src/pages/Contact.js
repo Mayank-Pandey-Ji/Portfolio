@@ -1,5 +1,6 @@
 import React from 'react'
 import Navbar from './Navbar'
+import Footer from './Footer';
 import { FaPhone , FaLocationDot,FaYoutube,FaGithub,FaXTwitter ,FaInstagram ,FaLinkedinIn} from "react-icons/fa6";
 
 import { MdEmail } from "react-icons/md";
@@ -53,6 +54,7 @@ const Contact = () => {
             <a className='h-[3rem] w-[3rem] flex justify-center items-center hover:bg-white hover:bg-opacity-50 hover:text-[#02050a] text-3xl rounded-full bg-[#02050a] text-white opacity-75 transition-all duration-700 ease-out border-2 border-opacity-45 border-white ' href="https://www.instagram.com/__mayank___pandey__/" target='_blank' rel="noopener noreferrer"><FaInstagram/></a>
           </div>
       </div>
+      <Footer/>
     </div>
   )
 }

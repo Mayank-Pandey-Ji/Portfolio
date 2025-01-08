@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from './Navbar'
 import Typewriter from 'typewriter-effect';
+import Footer from './Footer';
 import { RiTailwindCssFill } from "react-icons/ri";
 import { DiGit,DiGithubBadge ,DiHtml5 ,DiJsBadge ,DiNodejs ,DiReact} from "react-icons/di";
 import { CgCPlusPlus ,CgWindows } from "react-icons/cg";
@@ -15,7 +16,7 @@ const About = () => {
     <div className='aboutsec bg-[#02050a] flex flex-col items-center w-screen min-h-screen'>
       <Navbar  />
 
-        <div className="first_section flex max-w-[1300px] items-center pt-[67rem]">
+        <div className="first_section flex max-w-[1300px] items-center pt-[75rem]">
           <div className="left_side flex flex-col  w-[60%] gap-8">
               <h1 className='text-white text-4xl mx-auto' >
               Know Who <span className='text-green-300' >I'M</span>
@@ -112,7 +113,7 @@ const About = () => {
               </div>      
         </div>
 
-        <div className="tools_I_used text-white flex flex-col items-center gap-[4rem] pt-[8rem]">
+        <div className="tools_I_used text-white flex flex-col items-center gap-[4rem] pt-[8rem] pb-[6rem]">
               <h1 className='text-5xl'><span className='text-green-300' >Tools</span> I use</h1>
               <div className='flex gap-[4rem]'>
                   <div className='holographic-card'>
@@ -132,6 +133,7 @@ const About = () => {
                   </div>
               </div>     
         </div>
+        <Footer/>
     </div>
   )
 }
