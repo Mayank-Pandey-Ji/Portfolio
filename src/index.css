@@ -28,7 +28,7 @@ code {
 } */
 
 .homesection{
-  background-image: url('F:\PortFolio\portfolio_mayank\src\assets\banner-scaled.jpg');
+  background-image: url('./assets/banner-scaled.jpg');
 }
 
 .wave {

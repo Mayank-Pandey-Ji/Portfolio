@@ -1,6 +1,5 @@
 import React from 'react'
 import Navbar from './Navbar'
-
 import Typewriter from 'typewriter-effect';
 import profile from '../assets/profile.png';
 import download from '../assets/download.png'
