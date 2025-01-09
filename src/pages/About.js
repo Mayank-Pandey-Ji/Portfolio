@@ -10,10 +10,105 @@ import { IoLogoCss3 } from "react-icons/io";
 import { SiExpress,SiMongodb,SiWondersharefilmora,SiPostman } from "react-icons/si";
 import { FaHandPointRight } from "react-icons/fa";
 import about from '../assets/about.png'
+import { useCallback, useEffect, useState } from "react";
+import Particles, { initParticlesEngine } from "@tsparticles/react";
+import { loadSlim } from "@tsparticles/slim"; 
 
 const About = () => {
+
+  const [ init, setInit ] = useState(false);
+  
+      // this should be run only once per application lifetime
+      useEffect(() => {
+          initParticlesEngine(async (engine) => {
+              // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
+              // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+              // starting from v2 you can add only the features you need reducing the bundle size
+              //await loadAll(engine);
+              //await loadFull(engine);
+              await loadSlim(engine);
+              //await loadBasic(engine);
+          }).then(() => {
+              setInit(true);
+          });
+      }, []);
+  
+      const particlesLoaded = (container) => {
+          console.log(container);
+      };
+   
+
   return (
     <div className='aboutsec bg-[#02050a] flex flex-col items-center w-screen min-h-screen'>
+
+{ init && <Particles
+            id="tsparticles"
+            particlesLoaded={particlesLoaded}
+            options={{
+                background: {
+                    
+                },
+                fpsLimit: 120,
+                interactivity: {
+                    events: {
+                        onClick: {
+                            enable: true,
+                            mode: "push",
+                        },
+                        onHover: {
+                            enable: true,
+                            mode: "grab",
+                        },
+                        resize: true,
+                    },
+                    modes: {
+                        push: {
+                            quantity: 8,
+                        },
+                        repulse: {
+                            distance: 20,
+                            duration: 0.4,
+                        },
+                    },
+                },
+                particles: {
+                    color: {
+                        value: "#ffffff",
+                    },
+                   
+                    move: {
+                        direction: "none",
+                        enable: true,
+                        outModes: {
+                            default: "bounce",
+                        },
+                        random: false,
+                        speed: 4,
+                        straight: false,
+                    },
+                    number: {
+                        density: {
+                            enable: true,
+                            area: 800,
+                        },
+                        value: 250,
+                    },
+                    opacity: {
+                        value: 0.5,
+                    },
+                    shape: {
+                        type: "triangle",
+                    },
+                    size: {
+                        value: { min: 1, max: 8 },
+                    },
+                },
+                detectRetina: true,
+            }}
+        />
+}
+
+
       <Navbar  />
 
         <div className="first_section flex max-w-[1300px] items-center pt-[75rem]">
