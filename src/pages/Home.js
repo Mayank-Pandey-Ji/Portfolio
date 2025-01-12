@@ -8,6 +8,7 @@ import { useCallback, useEffect, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim"; 
 import image from '../assets/banner-scaled.jpg'
+import { motion } from 'framer-motion';
 const Home = () => {
 
   const [ init, setInit ] = useState(false);
@@ -159,8 +160,16 @@ const Home = () => {
             </div>    
 
             <div className="rightpart relative w-[50%]">
-                    <img src={download}  className=' frame absolute w-[75%]  translate-y-8 rotate-1' alt="" />
-                    <img src={profile} alt="" className=' w-[100%] ml-[7rem] '/>
+                    <motion.img src={download}  className=' frame absolute w-[75%]  translate-y-8 rotate-1' alt="" 
+                        initial={{ opacity: 0, y: -50 }} // Initial state: invisible and slightly above
+                        animate={{ opacity: 1, y: 0 }} // Final state: visible and in place
+                        transition={{ duration: 4, ease: "easeOut" }} // Animation duration and easing
+                    />
+                    <motion.img src={profile} alt="" className=' w-[100%] ml-[7rem] '
+                        initial={{ opacity: 0, scale:0.7 }} // Initial state: invisible and slightly above
+                        animate={{ opacity: 1, scale:1}} // Final state: visible and in place
+                        transition={{ duration: 1, ease: "easeOut" }} // Animation duration and easing
+                    />
             </div>
         </div>
 
