@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from './Navbar'
 import Typewriter from 'typewriter-effect';
+import { motion } from 'framer-motion';
 import Footer from './Footer';
 import { RiTailwindCssFill } from "react-icons/ri";
 import { DiGit,DiGithubBadge ,DiHtml5 ,DiJsBadge ,DiNodejs ,DiReact} from "react-icons/di";
@@ -10,7 +11,7 @@ import { IoLogoCss3 } from "react-icons/io";
 import { SiExpress,SiMongodb,SiWondersharefilmora,SiPostman } from "react-icons/si";
 import { FaHandPointRight } from "react-icons/fa";
 import about from '../assets/about.png'
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim"; 
 
@@ -112,7 +113,16 @@ const About = () => {
       <Navbar  />
 
         <div className="first_section flex max-w-[1300px] items-center pt-[75rem]">
-          <div className="left_side flex flex-col  w-[60%] gap-8">
+          <motion.div 
+          
+          
+          initial={{opacity:0 , x:"-10vw"}}
+          whileInView={{opacity:1 , x:0}}
+          transition={{duration:0.4 , ease:"easeIn"}}
+          
+          
+          
+          className="left_side flex flex-col  w-[60%] gap-8">
               <h1 className='text-white text-4xl mx-auto' >
               Know Who <span className='text-green-300' >I'M</span>
               </h1>
@@ -153,11 +163,17 @@ const About = () => {
                               />
                   </p>
               </div>
-          </div>
+          </motion.div>
 
-          <div className="right_side w-[40%]">
+          <motion.div
+          
+          initial={{opacity:0 , x:"10vw"}}
+          whileInView={{opacity:1 , x:0}}
+          transition={{duration:0.4 , ease:"easeIn"}}
+          
+          className="right_side w-[40%]">
               <img src={about} alt=""  className='w-[100%]' />
-          </div>
+          </motion.div>
         </div>
 
         <div className="skillset_section text-white flex flex-col pt-[5rem] items-center gap-[4rem]">
@@ -166,44 +182,90 @@ const About = () => {
                                     
                  
                   <div class="holographic-card">
-                    <h2><CgCPlusPlus/></h2>
+                    <motion.h2 
+                    
+                    initial={{opacity:0 , scale:0}}
+                    whileInView={{opacity:1 , scale:1}}
+                    transition={{duration:0.4 , ease:"easeIn"}}
+                    ><CgCPlusPlus/></motion.h2>
                   </div>
                   
                   <div className='holographic-card'>
-                    <h2><DiJsBadge/></h2>
+                    <motion.h2
+                    initial={{opacity:0 , scale:0}}
+                    whileInView={{opacity:1 , scale:1}}
+                    transition={{duration:0.4 , ease:"easeIn"}}
+                    ><DiJsBadge/></motion.h2>
                   </div>
                   <div className='holographic-card'>
-                    <h2><DiHtml5/></h2>
+                    <motion.h2
+                    initial={{opacity:0 , scale:0}}
+                    whileInView={{opacity:1 , scale:1}}
+                    transition={{duration:0.4 , ease:"easeIn"}}
+                    ><DiHtml5/></motion.h2>
                   </div>
                   <div className='holographic-card'>
-                    <h2><IoLogoCss3/></h2>
+                    <motion.h2 
+                    initial={{opacity:0 , scale:0}}
+                    whileInView={{opacity:1 , scale:1}}
+                    transition={{duration:0.4 , ease:"easeIn"}}
+                    ><IoLogoCss3/></motion.h2>
                   </div>
               </div>      
 
               <div className='row2 flex gap-[6rem]'>
                   <div className='holographic-card'>
-                    <h2><RiTailwindCssFill/></h2>
+                    <motion.h2 
+                    
+                    initial={{opacity:0 , scale:0}}
+                    whileInView={{opacity:1 , scale:1}}
+                    transition={{duration:0.4 , ease:"easeIn"}}
+                    ><RiTailwindCssFill/></motion.h2>
                   </div>
                   <div className='holographic-card'>
-                    <h2><DiGit/></h2>
+                    <motion.h2 
+                    
+                    initial={{opacity:0 , scale:0}}
+                    whileInView={{opacity:1 , scale:1}}
+                    transition={{duration:0.4 , ease:"easeIn"}}><DiGit/></motion.h2>
                   </div>
                   <div className='holographic-card'>
-                    <h2><DiNodejs/></h2>
+                    <motion.h2 
+                    
+                    initial={{opacity:0 , scale:0}}
+                    whileInView={{opacity:1 , scale:1}}
+                    transition={{duration:0.4 , ease:"easeIn"}}><DiNodejs/></motion.h2>
                   </div>
                   <div className='holographic-card'>
-                    <h2><DiReact/></h2>
+                    <motion.h2 
+                    
+                    initial={{opacity:0 , scale:0}}
+                    whileInView={{opacity:1 , scale:1}}
+                    transition={{duration:0.4 , ease:"easeIn"}}><DiReact/></motion.h2>
                   </div>
               </div>      
 
               <div className='row3 flex gap-[6rem]'>
                   <div className='holographic-card'>
-                   <h2> C</h2>
+                   <motion.h2 
+                    
+                    initial={{opacity:0 , scale:0}}
+                    whileInView={{opacity:1 , scale:1}}
+                    transition={{duration:0.4 , ease:"easeIn"}}> C</motion.h2>
                   </div>
                   <div className='holographic-card'>
-                   <h2> <SiExpress/></h2>
+                   <motion.h2 
+                    
+                    initial={{opacity:0 , scale:0}}
+                    whileInView={{opacity:1 , scale:1}}
+                    transition={{duration:0.4 , ease:"easeIn"}}> <SiExpress/></motion.h2>
                   </div>
                   <div className='holographic-card'>
-                   <h2> <SiMongodb/></h2>
+                   <motion.h2 
+                    
+                    initial={{opacity:0 , scale:0}}
+                    whileInView={{opacity:1 , scale:1}}
+                    transition={{duration:0.4 , ease:"easeIn"}}> <SiMongodb/></motion.h2>
                   </div>
               </div>      
         </div>
@@ -212,19 +274,39 @@ const About = () => {
               <h1 className='text-5xl'><span className='text-green-300' >Tools</span> I use</h1>
               <div className='flex gap-[4rem]'>
                   <div className='holographic-card'>
-                    <h2><VscVscode/></h2>
+                    <motion.h2 
+                    
+                    initial={{opacity:0 , scale:10}}
+                    whileInView={{opacity:1 , scale:1}}
+                    transition={{duration:0.4 , ease:"easeIn"}}><VscVscode/></motion.h2>
                   </div>
                   <div className='holographic-card'>
-                   <h2> <DiGithubBadge/></h2>
+                   <motion.h2 
+                    
+                    initial={{opacity:0 , scale:10}}
+                    whileInView={{opacity:1 , scale:1}}
+                    transition={{duration:0.4 , ease:"easeIn"}}> <DiGithubBadge/></motion.h2>
                   </div>
                   <div className='holographic-card'>
-                   <h2> <CgWindows/></h2>
+                   <motion.h2 
+                    
+                    initial={{opacity:0 , scale:10}}
+                    whileInView={{opacity:1 , scale:1}}
+                    transition={{duration:0.4 , ease:"easeIn"}}> <CgWindows/></motion.h2>
                   </div>
                   <div className='holographic-card'>
-                   <h2> <SiPostman/></h2>
+                   <motion.h2 
+                    
+                    initial={{opacity:0 , scale:10}}
+                    whileInView={{opacity:1 , scale:1}}
+                    transition={{duration:0.4 , ease:"easeIn"}}> <SiPostman/></motion.h2>
                   </div>
                   <div className='holographic-card'>
-                   <h2> <SiWondersharefilmora/></h2>
+                   <motion.h2 
+                    
+                    initial={{opacity:0 , scale:10}}
+                    whileInView={{opacity:1 , scale:1}}
+                    transition={{duration:0.4 , ease:"easeIn"}}> <SiWondersharefilmora/></motion.h2>
                   </div>
               </div>     
         </div>

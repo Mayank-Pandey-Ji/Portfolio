@@ -4,7 +4,7 @@ import Typewriter from 'typewriter-effect';
 import profile from '../assets/profile.png';
 import download from '../assets/download.png'
 import Footer from './Footer';
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim"; 
 import image from '../assets/banner-scaled.jpg'
@@ -160,14 +160,11 @@ const Home = () => {
             </div>    
 
             <div className="rightpart relative w-[50%]">
-                    <motion.img src={download}  className=' frame absolute w-[75%]  translate-y-8 rotate-1' alt="" 
-                        initial={{ opacity: 0, y: -50 }} // Initial state: invisible and slightly above
-                        animate={{ opacity: 1, y: 0 }} // Final state: visible and in place
-                        transition={{ duration: 4, ease: "easeOut" }} // Animation duration and easing
+                    <img src={download}  className=' frame absolute w-[75%]  translate-y-8 rotate-1' alt="" 
                     />
                     <motion.img src={profile} alt="" className=' w-[100%] ml-[7rem] '
                         initial={{ opacity: 0, scale:0.7 }} // Initial state: invisible and slightly above
-                        animate={{ opacity: 1, scale:1}} // Final state: visible and in place
+                        whileInView={{ opacity: 1, scale:1}} // Final state: visible and in place
                         transition={{ duration: 1, ease: "easeOut" }} // Animation duration and easing
                     />
             </div>
