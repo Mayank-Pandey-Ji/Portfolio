@@ -28,7 +28,7 @@ const Project = () => {
    
 
   return (
-    <div className='flex flex-col items-center'>
+    <div className='flex flex-col items-center bg-[#02050a] w-screen min-h-screen'>
 
 { init && <Particles
             id="tsparticles"
@@ -46,7 +46,7 @@ const Project = () => {
                         },
                         onHover: {
                             enable: true,
-                            mode: "grab",
+                            mode: "attract",
                         },
                         resize: true,
                     },
@@ -60,44 +60,101 @@ const Project = () => {
                         },
                     },
                 },
-                particles: {
-                    color: {
-                        value: "#ffffff",
-                    },
-                    links: {
-                        color: "#55e6a5",
-                        distance: 150,
-                        enable: true,
-                        opacity: 0.7,
-                        width: 1,
-                    },
-                    move: {
-                        direction: "none",
-                        enable: true,
-                        outModes: {
-                            default: "bounce",
-                        },
-                        random: false,
-                        speed: 4,
-                        straight: false,
-                    },
-                    number: {
-                        density: {
-                            enable: true,
-                            area: 800,
-                        },
-                        value: 250,
-                    },
-                    opacity: {
-                        value: 0.5,
-                    },
-                    shape: {
-                        type: "circle",
-                    },
-                    size: {
-                        value: { min: 1, max: 7 },
-                    },
-                },
+                "particles": {
+    "number": {
+      "value": 200,
+      "density": {
+        "enable": true,
+        "value_area": 800
+      }
+    },
+    "color": {
+      "value": ["#ffffff", "#e0e0e0", "#d0d0d0"], 
+      "random": true
+    },
+    "shape": {
+      "type": "circle" 
+    },
+    "opacity": {
+      "value": 0.1, 
+      "random": true,
+      "anim": {
+        "enable": true, 
+        "speed": 0.2, 
+        "opacity_min": 0.05, 
+        "sync": false
+      }
+    },
+    "size": {
+      "value": 3,
+      "random": true,
+      "anim": {
+        "enable": true, 
+        "speed": 2, 
+        "size_min": 0.1, 
+        "sync": false
+      }
+    },
+    "line_linked": {
+      "enable": false
+    },
+    "move": {
+      "enable": true,
+      "speed": 0.5, 
+      "direction": "none", 
+      "random": true,
+      "straight": false,
+      "out_mode": "out", 
+      "bounce": false,
+      "attract": {
+        "enable": false,
+        "rotateX": 600,
+        "rotateY": 1200
+      }
+    }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": {
+        "enable": true,
+        "mode": "repulse"
+      },
+      "onclick": {
+        "enable": true,
+        "mode": "push"
+      },
+      "resize": true
+    },
+    "modes": {
+      "grab": {
+        "distance": 400,
+        "line_linked": {
+          "opacity": 1
+        }
+      },
+      "bubble": {
+        "distance": 400,
+        "size": 40,
+        "duration": 2,
+        "opacity": 8,
+        "speed": 3
+      },
+      "repulse": {
+        "distance": 200,
+        "duration": 0.4
+      },
+      "push": {
+        "particles_nb": 4
+      },
+      "remove": {
+        "particles_nb": 2
+      }
+    }
+  },
+  "background": {
+   
+  },
                 detectRetina: true,
             }}
         />
@@ -105,6 +162,7 @@ const Project = () => {
 
 
       <Navbar/>
+        
     </div>
   )
 }
