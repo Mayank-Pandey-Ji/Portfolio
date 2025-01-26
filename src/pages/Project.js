@@ -1,5 +1,6 @@
 import React from 'react'
 import Navbar from './Navbar'
+import Card from './Card'
 import { useCallback, useEffect, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim"; 
@@ -162,7 +163,10 @@ const Project = () => {
 
 
       <Navbar/>
-        
+        <div className='parent-section'>
+            <Card/>
+            <h1 className='pt-[10rem]'>Projects To be Added</h1>
+        </div>
     </div>
   )
 }
