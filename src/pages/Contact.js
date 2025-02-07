@@ -103,7 +103,7 @@ const Contact = () => {
 
       <Navbar/>
       <div className='flex flex-col text-white items-center font-mono w-[1300px] mt-[42rem] border-4 border-[#4e5665] border-opacity-10 p-[3rem] '>
-        <p className='opacity-60 text-xl -mt-[10rem] pb-[1rem]'>get in touch</p>
+        <p className='opacity-60 text-xl -mt-[6rem] pb-[1rem]'>get in touch</p>
         <h1 className='text-5xl font-extrabold opacity-80'>CONTACT</h1>
         <div className='flex items-center pt-[4rem] gap-4 justify-center w-[100%]'>
             <div className="left flex flex-col gap-[2rem] w-[40%]">

@@ -163,9 +163,8 @@ const Project = () => {
 
 
       <Navbar/>
-        <div className='parent-section'>
+        <div className='parent-section pt-[25rem]'>
             <Card/>
-            <h1 className='pt-[10rem]'>Projects To be Added</h1>
         </div>
     </div>
   )
