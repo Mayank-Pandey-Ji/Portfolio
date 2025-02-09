@@ -31,9 +31,7 @@ code {
   font-size: 89px;
 } */
 
-.homesection{
-  background-image: url('./assets/banner-scaled.jpg');
-}
+
 
 .wave {
   animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
