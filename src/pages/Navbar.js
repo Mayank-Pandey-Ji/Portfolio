@@ -11,7 +11,7 @@ import Typewriter from 'typewriter-effect';
 
 const Navbar = () => {
   return (
-    <div className='navv flex justify-between mx-auto z-999 text-white items-center h-20 font-sans fixed  w-[1300px] top-0 z-50'>
+    <div className='navv flex justify-between mx-auto text-white items-center h-20 font-sans fixed  w-[1300px] top-0 z-50'>
       <Link to='/'  >
         <img src={sign} className='h-40 my-auto pt-2 ml-10 hover:scale-110 transition-all ease-out duration-300' />
       </Link>
