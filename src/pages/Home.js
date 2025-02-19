@@ -12,7 +12,7 @@ import { motion } from 'framer-motion';
 const Home = () => {
 
   const [ init, setInit ] = useState(false);
-
+ 
     // this should be run only once per application lifetime
     useEffect(() => {
         initParticlesEngine(async (engine) => {
@@ -153,9 +153,11 @@ const Home = () => {
                 </div>
 
                 <div className="resume mt-7">
+                      <a href="https://drive.google.com/file/d/1T7FzgiR10hnZ5nRvLjnN4Clmve25XBAP/view?usp=sharing">
                       <button className=' liquid btn'>
-                              download resume
+                              Download Resume
                       </button>
+                      </a>
                 </div>
             </div>    
 
