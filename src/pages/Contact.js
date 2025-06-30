@@ -9,6 +9,9 @@ import { MdEmail } from "react-icons/md";
 const Contact = () => {
 
   const [ init, setInit ] = useState(false);
+  const [fname , setfname] = useState("");
+  const [lname , setlname] = useState("");
+  const [email , setemail] = useState("");
   
       // this should be run only once per application lifetime
       useEffect(() => {
@@ -28,6 +31,11 @@ const Contact = () => {
       const particlesLoaded = (container) => {
           console.log(container);
       };
+
+      function submithanlder()
+      {
+
+      }
    
 
   return (
@@ -116,22 +124,22 @@ const Contact = () => {
               <form action="" className='flex flex-col gap-[2rem]'>
                 <div className='flex flex-col justify-center'>
                   <label className='opacity-60' htmlFor="first_name">First Name</label>
-                  <input className='bg-[#4e5665] bg-opacity-20 placeholder:opacity-30 pl-[1rem] h-[2.3rem] rounded-md' type="text" id='first_name' placeholder='Mayank' />
+                  <input className='bg-[#4e5665] bg-opacity-20 placeholder:opacity-30 pl-[1rem] h-[2.3rem] rounded-md' type="text" id='first_name' placeholder='Mayank' value={fname} onChange={(e)=> setfname(e.target.value)}/>
                 </div>
                 <div className='flex flex-col justify-center'>
                   <label className='opacity-60' htmlFor="last_name">Last Name</label>
-                  <input className='bg-[#4e5665] bg-opacity-20 placeholder:opacity-30 pl-[1rem] h-[2.3rem] rounded-md' type="text" id='last_name' placeholder='Pandey' />
+                  <input className='bg-[#4e5665] bg-opacity-20 placeholder:opacity-30 pl-[1rem] h-[2.3rem] rounded-md' type="text" id='last_name' placeholder='Pandey' value={lname} onChange={(e)=> setlname(e.target.value)} />
                 </div>
                 <div className='flex flex-col justify-center'>
                   <label className='opacity-60' htmlFor="email">Email</label>
-                  <input className='bg-[#4e5665] bg-opacity-20 placeholder:opacity-30 pl-[1rem] h-[2.3rem] rounded-md' type="email" id='email' placeholder='abcde@fgh.com' />
+                  <input className='bg-[#4e5665] bg-opacity-20 placeholder:opacity-30 pl-[1rem] h-[2.3rem] rounded-md' type="email" id='email' placeholder='abcde@fgh.com' value={email} onChange={(e)=> setemail(e.target.value)} />
                 </div>
                 
                 <div className='flex flex-col justify-center'>
                   <label className='opacity-60' htmlFor="message">Your Message</label>
                   <input className='bg-[#4e5665] bg-opacity-20 pl-[1rem] h-[12rem] rounded-md' type="text" id='message'/>
                 </div>
-                <button className='liquid btn w-[25%] h-[50px] flex justify-center items-center' type="submit">Send</button>
+                <button onSubmit={submithanlder()} className='liquid btn w-[25%] h-[50px] flex justify-center items-center' type="submit">Send</button>
               </form>
             </div>
 

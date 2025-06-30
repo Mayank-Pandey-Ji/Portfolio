@@ -112,7 +112,7 @@ const About = () => {
 
       <Navbar  />
 
-        <div className="first_section flex max-w-[1300px] items-center pt-[75rem]">
+        <div className="first_section md:flex md:flex-row flex flex-col max-w-[1300px] items-center md:pt-[75rem] pt-[200rem]">
           <motion.div 
           
           
@@ -178,7 +178,7 @@ const About = () => {
 
         <div className="skillset_section text-white flex flex-col pt-[5rem] items-center gap-[4rem]">
               <h1 className='text-5xl' >Professional <span className='text-green-300'>Skillset</span></h1>   
-              <div className='row1 flex gap-[6rem]'>
+              <div className='row1 md:flex md:flex-row flex flex-col md:gap-[6rem] gap-[3rem]'>
                                     
                  
                   <div class="holographic-card">
@@ -211,9 +211,9 @@ const About = () => {
                     transition={{duration:0.4 , ease:"easeIn"}}
                     ><IoLogoCss3/></motion.h2>
                   </div>
-              </div>      
+              </div>       
 
-              <div className='row2 flex gap-[6rem]'>
+              <div className='row2 md:flex md:flex-row flex flex-col md:gap-[6rem] gap-[3rem]'>
                   <div className='holographic-card'>
                     <motion.h2 
                     
@@ -245,7 +245,7 @@ const About = () => {
                   </div>
               </div>      
 
-              <div className='row3 flex gap-[6rem]'>
+              <div className='row3 md:flex md:flex-row flex flex-col md:gap-[6rem] gap-[3rem]'>
                   <div className='holographic-card'>
                    <motion.h2 
                     
@@ -272,7 +272,7 @@ const About = () => {
 
         <div className="tools_I_used text-white flex flex-col items-center gap-[4rem] pt-[8rem] pb-[6rem]">
               <h1 className='text-5xl'><span className='text-green-300' >Tools</span> I use</h1>
-              <div className='flex gap-[4rem]'>
+              <div className='md:flex md:flex-row flex flex-col md:gap-[6rem] gap-[3rem]'>
                   <div className='holographic-card'>
                     <motion.h2 
                     
