@@ -170,7 +170,7 @@ const Project = () => {
 
 
       <Navbar/>
-        <div className='parent-section pt-[100rem] flex flex-col items-center w-[1300px] pb-[3rem]'>
+        <div className='parent-section md:pt-[100rem] pt-[200rem] flex flex-col items-center md:w-[1300px] pb-[3rem] md:mx-0 mx-6'>
             <h1 className='text-4xl text-white opacity-80'>My Recent <span className='text-green-500'>Works</span></h1>
             <h3 className='text-xl text-white opacity-65 mb-8 pt-4'>Here are a few projects I've worked on recently.</h3>
             <div className='md:flex md:flex-row justify-around md:flex-wrap flex flex-col flex-nowrap gap-[7rem]'>
