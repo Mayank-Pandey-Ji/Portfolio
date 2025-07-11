@@ -39,7 +39,7 @@ const Contact = () => {
    
 
   return (
-    <div className='flex flex-col items-center min-h-screen w-screen bg-[#02050a]' >
+    <div className='flex flex-col items-center min-h-screen w-screen bg-[#02050a] pt-24' >
 
 { init && <Particles
             id="tsparticles"
@@ -110,7 +110,7 @@ const Contact = () => {
 
 
       <Navbar/>
-      <div className='flex flex-col text-white items-center font-mono sm:w-[1300px] mt-[42rem] border-4 border-[#4e5665] border-opacity-10 sm:p-[3rem] p-[1rem] w-[90%]'>
+      <div className='flex flex-col text-white items-center font-mono sm:w-[1300px] sm:mt-[42rem] mt-[60rem] border-4 border-[#4e5665] border-opacity-10 sm:p-[3rem] p-[1rem] w-[100%]'>
         <p className='opacity-60 text-xl -mt-[6rem] pb-[1rem]'>get in touch</p>
         <h1 className='text-5xl font-extrabold opacity-80'>CONTACT</h1>
         <div className='sm:flex sm:flex-row flex flex-col items-center pt-[4rem] gap-4 justify-center w-[100%]'>

@@ -33,7 +33,7 @@ const Home = () => {
     };
  
   return (
-    <div className=" bg-[#02050a] sm:bg-[url('./assets/banner-scaled.jpg')]  bg-cover bg-center text-green-300 flex flex-col items-center w-screen" >
+    <div className=" bg-[#02050a] sm:bg-[url('./assets/banner-scaled.jpg')]  bg-cover bg-center text-green-300 flex flex-col items-center w-screen pt-16" >
       { init && <Particles
             id="tsparticles"
             particlesLoaded={particlesLoaded}
@@ -109,7 +109,7 @@ const Home = () => {
 }
 
       <Navbar/>
-        <div className=' sm:flex sm:flex-row flex flex-col md:mt-[9rem] mt-[12rem] max-w-[1300px] items-center  justify-between'>
+        <div className=' sm:flex sm:flex-row flex flex-col md:mt-[9rem] mt-[12rem] max-w-[1300px] items-center  justify-between top-0 sm:pt-[5rem] pt-[25rem]'>
             <div className="leftpart flex flex-col sm:w-[50%] w-[80%] ">
                 <div className="intro flex flex-col gap-4">
                   <h1 className='flex items-center'>

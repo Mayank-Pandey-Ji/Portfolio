@@ -36,7 +36,7 @@ const Project = () => {
    
 
   return (
-    <div className='flex flex-col items-center bg-[#02050a] w-screen min-h-screen'>
+    <div className='flex flex-col items-center bg-[#02050a] w-screen min-h-screen pt-10'>
 
 { init && <Particles
             id="tsparticles"

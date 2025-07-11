@@ -40,7 +40,7 @@ const About = () => {
    
 
   return (
-    <div className='aboutsec bg-[#02050a] flex flex-col items-center w-screen min-h-screen'>
+    <div className='aboutsec bg-[#02050a] flex flex-col items-center w-screen min-h-screen pt-24'>
 
 { init && <Particles
             id="tsparticles"
@@ -112,7 +112,7 @@ const About = () => {
 
       <Navbar  />
 
-        <div className="first_section md:flex md:flex-row flex flex-col max-w-[1300px] items-center md:pt-[75rem] sm:pt-[200rem] pt-[225rem] md:gap-0 gap-4">
+        <div className="first_section md:flex md:flex-row flex flex-col sm:max-w-[1300px] items-center md:pt-[75rem] sm:pt-[200rem] pt-[225rem] md:gap-0 gap-4">
           <motion.div 
           
           
@@ -122,7 +122,7 @@ const About = () => {
           
           
           
-          className="left_side flex flex-col  w-[60%] gap-8">
+          className="left_side flex flex-col  sm:w-[60%] w-[90%] gap-8">
               <h1 className='text-white text-4xl mx-auto' >
               Know Who <span className='text-green-300' >I'M</span>
               </h1>
@@ -171,7 +171,7 @@ const About = () => {
           whileInView={{opacity:1 , x:0}}
           transition={{duration:0.4 , ease:"easeIn"}}
           
-          className="right_side w-[40%]">
+          className="right_side sm:w-[40%] w-[80%]">
               <img src={about} alt=""  className='w-[100%]' />
           </motion.div>
         </div>
