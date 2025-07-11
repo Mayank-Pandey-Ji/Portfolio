@@ -112,7 +112,7 @@ const About = () => {
 
       <Navbar  />
 
-        <div className="first_section md:flex md:flex-row flex flex-col max-w-[1300px] items-center md:pt-[75rem] pt-[200rem]">
+        <div className="first_section md:flex md:flex-row flex flex-col max-w-[1300px] items-center md:pt-[75rem] sm:pt-[200rem] pt-[225rem] md:gap-0 gap-4">
           <motion.div 
           
           
@@ -177,7 +177,7 @@ const About = () => {
         </div>
 
         <div className="skillset_section text-white flex flex-col pt-[5rem] items-center gap-[4rem]">
-              <h1 className='text-5xl' >Professional <span className='text-green-300'>Skillset</span></h1>   
+              <h1 className='text-5xl sm:px-0 px-6' >Professional <span className='text-green-300'>Skillset</span></h1>   
               <div className='row1 md:flex md:flex-row flex flex-col md:gap-[6rem] gap-[3rem]'>
                                     
                  

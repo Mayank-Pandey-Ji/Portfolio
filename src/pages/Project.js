@@ -173,7 +173,7 @@ const Project = () => {
         <div className='parent-section pt-[100rem] flex flex-col items-center w-[1300px] pb-[3rem]'>
             <h1 className='text-4xl text-white opacity-80'>My Recent <span className='text-green-500'>Works</span></h1>
             <h3 className='text-xl text-white opacity-65 mb-8 pt-4'>Here are a few projects I've worked on recently.</h3>
-            <div className='flex justify-around flex-wrap gap-[7rem]'>
+            <div className='md:flex md:flex-row justify-around md:flex-wrap flex flex-col flex-nowrap gap-[7rem]'>
               <Card  image={pssgn}
                 title="Password Generator"
                 description="A user-friendly Random Password Generator that lets you create secure passwords with customizable length and character types (uppercase, lowercase, numbers, and symbols). Enhance your online security with strong, unpredictable passwords!"

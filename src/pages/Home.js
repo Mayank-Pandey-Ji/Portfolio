@@ -109,11 +109,11 @@ const Home = () => {
 }
 
       <Navbar/>
-        <div className=' sm:flex sm:flex-row flex flex-col mt-[9rem]  max-w-[1300px] items-center justify-between'>
-            <div className="leftpart flex flex-col w-[50%] ">
+        <div className=' sm:flex sm:flex-row flex flex-col md:mt-[9rem] mt-[12rem] max-w-[1300px] items-center  justify-between'>
+            <div className="leftpart flex flex-col sm:w-[50%] w-[80%] ">
                 <div className="intro flex flex-col gap-4">
                   <h1 className='flex items-center'>
-                    <span className='text-white text-6xl min-w-[21.3rem] font-mono font-extrabold' >
+                    <span className='text-white sm:text-6xl sm:min-w-[21.3rem]  min-w-[11rem] text-3xl font-mono font-extrabold' >
                         <Typewriter
                               options={{
                                 strings: ['Hello ' , 'Hola ' , 'Bonjour ' , 'Ciao ' , 'こんにちは' , '你好 ' , ],
@@ -127,7 +127,7 @@ const Home = () => {
                     </span>
 
                     
-                    <span className="wave text-6xl" role="img" aria-labelledby="wave">
+                    <span className=" wave text-3xl sm:text-6xl " role="img" aria-labelledby="wave">
                     👋🏻
                     </span>
                     
@@ -135,7 +135,7 @@ const Home = () => {
 
                   <h2 className='text-white text-2xl'>I'm <span className=' text-green-300 font-extrabold tracking-wider text-5xl px-3'>Mayank Pandey</span></h2>
 
-                    <h2 className='text-white text-4xl font-mono font-semibold '>
+                    <h2 className='text-white sm:text-4xl text-2xl font-mono font-semibold '>
                         <Typewriter
                               options={{
                                 strings: ['Web Developer ' ,'Freelancer ', 'Competitive Programmer '],
@@ -148,7 +148,7 @@ const Home = () => {
 
                 </div>
 
-                <div className="description text-white opacity-65 mt-10 ">
+                <div className="description text-white opacity-65 mt-10">
                 I’m a 3rd-year BTech student in Electronics, passionate about web development and problem-solving. Proficient in the MERN stack and DSA, I’m honing my skills on platforms like LeetCode and CodeChef. Beyond coding, I love football, sketching, and gaming, and I’ve mentored over 10,000 students as a tutor. I’m always eager to learn, grow, and collaborate to build impactful solutions.
                 </div>
 
@@ -161,10 +161,10 @@ const Home = () => {
                 </div>
             </div>    
 
-            <div className="rightpart relative w-[50%]">
-                    <img src={download}  className=' frame absolute w-[75%]  translate-y-8 rotate-1' alt="" 
+            <div className="rightpart relative sm:w-[50%] w-[80%]">
+                    <img src={download}  className=' frame sm:absolute sm:w-[75%] w-[95%] sm:translate-y-8 rotate-1 md:block hidden' alt="" 
                     />
-                    <motion.img src={profile} alt="" className=' w-[100%] ml-[7rem] '
+                    <motion.img src={profile} alt="" className=' w-[100%] sm:ml-[7rem] '
                         initial={{ opacity: 0, scale:0.7 }} // Initial state: invisible and slightly above
                         whileInView={{ opacity: 1, scale:1}} // Final state: visible and in place
                         transition={{ duration: 1, ease: "easeOut" }} // Animation duration and easing
