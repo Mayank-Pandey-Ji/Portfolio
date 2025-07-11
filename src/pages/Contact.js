@@ -110,17 +110,17 @@ const Contact = () => {
 
 
       <Navbar/>
-      <div className='flex flex-col text-white items-center font-mono w-[1300px] mt-[42rem] border-4 border-[#4e5665] border-opacity-10 p-[3rem] '>
+      <div className='flex flex-col text-white items-center font-mono sm:w-[1300px] mt-[42rem] border-4 border-[#4e5665] border-opacity-10 sm:p-[3rem] p-[1rem] w-[90%]'>
         <p className='opacity-60 text-xl -mt-[6rem] pb-[1rem]'>get in touch</p>
         <h1 className='text-5xl font-extrabold opacity-80'>CONTACT</h1>
-        <div className='flex items-center pt-[4rem] gap-4 justify-center w-[100%]'>
-            <div className="left flex flex-col gap-[2rem] w-[40%]">
+        <div className='sm:flex sm:flex-row flex flex-col items-center pt-[4rem] gap-4 justify-center w-[100%]'>
+            <div className="left flex flex-col gap-[2rem] sm:w-[40%] w-[100%]">
               <div className='flex items-center gap-4 opacity-60 bg-[#4e5665] bg-opacity-20 h-[4rem] rounded-md'><div className='flex items-center gap-[1rem] pl-[2rem]'><div className='bg-gray-700 w-[2.2rem] h-[2.2rem] flex justify-center items-center rounded-full'><FaPhone/></div> <div className='flex items-center gap-1'><span className='text-green-300'>+91</span> 8200725753</div></div></div>
               <div className='flex items-center gap-4 opacity-60 bg-[#4e5665] bg-opacity-20 h-[4rem] rounded-md'><div className='flex items-center gap-[1rem] pl-[2rem]'><div className='bg-gray-700 w-[2.2rem] h-[2.2rem] flex justify-center items-center rounded-full'><MdEmail/></div> pandeymayank1099@gmail.com</div></div>
               <div className='flex items-center gap-4 opacity-60 bg-[#4e5665] bg-opacity-20 h-[4rem] rounded-md'><div className='flex items-center gap-[1rem] pl-[2rem]'><div className='bg-gray-700 w-[2.2rem] h-[2.2rem] flex justify-center items-center rounded-full'><FaLocationDot/></div> Mirzapur, Uttar Pradesh</div></div>
             </div>
-            <div className="mid  w-1 bg-white bg-opacity-50 h-[22rem] mx-[1rem] rounded-lg"></div>
-            <div className="right w-[40%]">
+            <div className="mid  sm:w-1 bg-white bg-opacity-30 sm:h-[22rem] w-[97vw] h-1 sm:mx-[1rem] rounded-lg"></div>
+            <div className="right sm:w-[40%] w-[100%]">
               <form action="" className='flex flex-col gap-[2rem]'>
                 <div className='flex flex-col justify-center'>
                   <label className='opacity-60' htmlFor="first_name">First Name</label>
