@@ -6,6 +6,10 @@ import { useCallback, useEffect, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim"; 
 import { MdEmail } from "react-icons/md";
+import { useRef } from 'react';
+import emailjs from '@emailjs/browser';
+
+
 const Contact = () => {
 
   const [ init, setInit ] = useState(false);
@@ -32,11 +36,24 @@ const Contact = () => {
           console.log(container);
       };
 
-      function submithanlder()
-      {
+      const form = useRef();
 
-      }
-   
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      'service_7by0qnk',       // Replace with your EmailJS service ID
+      'template_z52zfir',      // Replace with your EmailJS template ID
+      form.current,
+      'jf3DmR0CLM45rp_Kp'        // Replace with your EmailJS public key
+    ).then((result) => {
+        alert("Message sent successfully! 🚀");
+        form.current.reset();
+      }, (error) => {
+        alert("Failed to send message 😞");
+        console.log(error.text);
+      });
+    }
 
   return (
     <div className='flex flex-col items-center min-h-screen w-screen bg-[#02050a] pt-24' >
@@ -121,25 +138,25 @@ const Contact = () => {
             </div>
             <div className="mid  sm:w-1 bg-white bg-opacity-30 sm:h-[22rem] w-[97vw] h-1 sm:mx-[1rem] rounded-lg"></div>
             <div className="right sm:w-[40%] w-[100%]">
-              <form action="" className='flex flex-col gap-[2rem]'>
+              <form ref={form} onSubmit={sendEmail} className='flex flex-col gap-[2rem]'>
                 <div className='flex flex-col justify-center'>
                   <label className='opacity-60' htmlFor="first_name">First Name</label>
-                  <input className='bg-[#4e5665] bg-opacity-20 placeholder:opacity-30 pl-[1rem] h-[2.3rem] rounded-md' type="text" id='first_name' placeholder='Mayank' value={fname} onChange={(e)=> setfname(e.target.value)}/>
+                  <input className='bg-[#4e5665] bg-opacity-20 placeholder:opacity-30 pl-[1rem] h-[2.3rem] rounded-md' type="text" id='first_name' placeholder='Mayank' name='first_name' value={fname} onChange={(e)=> setfname(e.target.value)}/>
                 </div>
                 <div className='flex flex-col justify-center'>
                   <label className='opacity-60' htmlFor="last_name">Last Name</label>
-                  <input className='bg-[#4e5665] bg-opacity-20 placeholder:opacity-30 pl-[1rem] h-[2.3rem] rounded-md' type="text" id='last_name' placeholder='Pandey' value={lname} onChange={(e)=> setlname(e.target.value)} />
+                  <input className='bg-[#4e5665] bg-opacity-20 placeholder:opacity-30 pl-[1rem] h-[2.3rem] rounded-md' type="text" id='last_name' placeholder='Pandey' name='last_name' value={lname} onChange={(e)=> setlname(e.target.value)} />
                 </div>
                 <div className='flex flex-col justify-center'>
                   <label className='opacity-60' htmlFor="email">Email</label>
-                  <input className='bg-[#4e5665] bg-opacity-20 placeholder:opacity-30 pl-[1rem] h-[2.3rem] rounded-md' type="email" id='email' placeholder='abcde@fgh.com' value={email} onChange={(e)=> setemail(e.target.value)} />
+                  <input className='bg-[#4e5665] bg-opacity-20 placeholder:opacity-30 pl-[1rem] h-[2.3rem] rounded-md' type="email" id='email' placeholder='abcde@fgh.com' name='reply_to' value={email} onChange={(e)=> setemail(e.target.value)} />
                 </div>
                 
                 <div className='flex flex-col justify-center'>
                   <label className='opacity-60' htmlFor="message">Your Message</label>
-                  <input className='bg-[#4e5665] bg-opacity-20 pl-[1rem] h-[12rem] rounded-md' type="text" id='message'/>
+                  <input className='bg-[#4e5665] bg-opacity-20 pl-[1rem] h-[12rem] rounded-md' type="text" name='message' id='message'/>
                 </div>
-                <button onSubmit={submithanlder()} className='liquid btn w-[25%] h-[50px] flex justify-center items-center' type="submit">Send</button>
+                <button className='liquid btn w-[25%] h-[50px] flex justify-center items-center' type="submit">Send</button>
               </form>
             </div>
 
