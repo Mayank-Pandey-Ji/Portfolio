@@ -8,8 +8,8 @@ import { DiGit,DiGithubBadge ,DiHtml5 ,DiJsBadge ,DiNodejs ,DiReact} from "react
 import { CgCPlusPlus ,CgWindows } from "react-icons/cg";
 import { VscVscode } from "react-icons/vsc";
 import { IoLogoCss3 } from "react-icons/io";
-import { SiExpress,SiMongodb,SiWondersharefilmora,SiPostman } from "react-icons/si";
-import { FaHandPointRight } from "react-icons/fa";
+import { SiExpress,SiMongodb,SiWondersharefilmora,SiPostman ,SiPandas,SiNumpy ,SiScikitlearn  } from "react-icons/si";
+import { FaHandPointRight , FaPython} from "react-icons/fa";
 import about from '../assets/about.png'
 import { useEffect, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
@@ -267,7 +267,39 @@ const About = () => {
                     whileInView={{opacity:1 , scale:1}}
                     transition={{duration:0.4 , ease:"easeIn"}}> <SiMongodb/></motion.h2>
                   </div>
+                  <div className='holographic-card'>
+                   <motion.h2 
+                    
+                    initial={{opacity:0 , scale:0}}
+                    whileInView={{opacity:1 , scale:1}}
+                    transition={{duration:0.4 , ease:"easeIn"}}> <FaPython/></motion.h2>
+                  </div>
               </div>      
+
+              <div className='row3 md:flex md:flex-row flex flex-col md:gap-[6rem] gap-[3rem]'>
+                  <div className='holographic-card'>
+                   <motion.h2 
+                    
+                    initial={{opacity:0 , scale:0}}
+                    whileInView={{opacity:1 , scale:1}}
+                    transition={{duration:0.4 , ease:"easeIn"}}> <SiPandas/></motion.h2>
+                  </div>
+                  <div className='holographic-card'>
+                   <motion.h2 
+                    
+                    initial={{opacity:0 , scale:0}}
+                    whileInView={{opacity:1 , scale:1}}
+                    transition={{duration:0.4 , ease:"easeIn"}}> <SiNumpy /></motion.h2>
+                  </div>
+                  <div className='holographic-card'>
+                   <motion.h2 
+                    
+                    initial={{opacity:0 , scale:0}}
+                    whileInView={{opacity:1 , scale:1}}
+                    transition={{duration:0.4 , ease:"easeIn"}}> <SiScikitlearn /></motion.h2>
+                  </div>
+                  
+              </div>
         </div>
 
         <div className="tools_I_used text-white flex flex-col items-center gap-[4rem] pt-[8rem] pb-[6rem]">
