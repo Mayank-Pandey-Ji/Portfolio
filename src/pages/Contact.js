@@ -16,6 +16,15 @@ const Contact = () => {
   const [fname , setfname] = useState("");
   const [lname , setlname] = useState("");
   const [email , setemail] = useState("");
+  const [sending, setSending] = useState(false);
+
+  // validation errors
+  const [errors, setErrors] = useState({
+    first_name: "",
+    last_name: "",
+    reply_to: "",
+    message: ""
+  });
   
       // this should be run only once per application lifetime
       useEffect(() => {
@@ -38,8 +47,56 @@ const Contact = () => {
 
       const form = useRef();
 
+  const validate = () => {
+    const e = { first_name: "", last_name: "", reply_to: "", message: "" };
+    let valid = true;
+
+    if (!fname.trim()) {
+      e.first_name = "First name is required";
+      valid = false;
+    }
+
+    if (!lname.trim()) {
+      e.last_name = "Last name is required";
+      valid = false;
+    }
+
+    // simple email regex
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email.trim()) {
+      e.reply_to = "Email is required";
+      valid = false;
+    } else if (!emailRegex.test(email.trim())) {
+      e.reply_to = "Enter a valid email";
+      valid = false;
+    }
+
+    const messageValue = form.current?.message?.value ?? "";
+    if (!messageValue.trim()) {
+      e.message = "Message cannot be empty";
+      valid = false;
+    }
+
+    setErrors(e);
+    return valid;
+  };
+
   const sendEmail = (e) => {
     e.preventDefault();
+
+    // validate before sending
+    if (!validate()) {
+      // focus first invalid field if possible
+      if (form.current) {
+        if (errors.first_name && form.current.first_name) form.current.first_name.focus();
+        else if (errors.last_name && form.current.last_name) form.current.last_name.focus();
+        else if (errors.reply_to && form.current.reply_to) form.current.reply_to.focus();
+        else if (errors.message && form.current.message) form.current.message.focus();
+      }
+      return;
+    }
+
+    setSending(true);
 
     emailjs.sendForm(
       'service_7by0qnk',       // Replace with your EmailJS service ID
@@ -49,9 +106,16 @@ const Contact = () => {
     ).then((result) => {
         alert("Message sent successfully! 🚀");
         form.current.reset();
+        // reset controlled fields too
+        setfname("");
+        setlname("");
+        setemail("");
+        setErrors({ first_name: "", last_name: "", reply_to: "", message: "" });
+        setSending(false);
       }, (error) => {
         alert("Failed to send message 😞");
         console.log(error.text);
+        setSending(false);
       });
     }
 
@@ -138,25 +202,35 @@ const Contact = () => {
             </div>
             <div className="mid  sm:w-1 bg-white bg-opacity-30 sm:h-[22rem] w-[97vw] h-1 sm:mx-[1rem] rounded-lg"></div>
             <div className="right sm:w-[40%] w-[100%]">
-              <form ref={form} onSubmit={sendEmail} className='flex flex-col gap-[2rem]'>
+              <form ref={form} onSubmit={sendEmail} className='flex flex-col gap-[2rem]' noValidate>
                 <div className='flex flex-col justify-center'>
                   <label className='opacity-60' htmlFor="first_name">First Name</label>
-                  <input className='bg-[#4e5665] bg-opacity-20 placeholder:opacity-30 pl-[1rem] h-[2.3rem] rounded-md' type="text" id='first_name' placeholder='Mayank' name='first_name' value={fname} onChange={(e)=> setfname(e.target.value)}/>
+                  <input
+                    className={`bg-[#4e5665] bg-opacity-20 placeholder:opacity-30 pl-[1rem] h-[2.3rem] rounded-md ${errors.first_name ? 'ring-2 ring-red-500' : ''}`}
+                    type="text" id='first_name' placeholder='Mayank' name='first_name' value={fname} onChange={(e)=> { setfname(e.target.value); if (errors.first_name) setErrors(prev=>({...prev, first_name: ""})); }} />
+                  {errors.first_name && <span className='text-xs text-red-400 mt-1'>{errors.first_name}</span>}
                 </div>
                 <div className='flex flex-col justify-center'>
                   <label className='opacity-60' htmlFor="last_name">Last Name</label>
-                  <input className='bg-[#4e5665] bg-opacity-20 placeholder:opacity-30 pl-[1rem] h-[2.3rem] rounded-md' type="text" id='last_name' placeholder='Pandey' name='last_name' value={lname} onChange={(e)=> setlname(e.target.value)} />
+                  <input
+                    className={`bg-[#4e5665] bg-opacity-20 placeholder:opacity-30 pl-[1rem] h-[2.3rem] rounded-md ${errors.last_name ? 'ring-2 ring-red-500' : ''}`}
+                    type="text" id='last_name' placeholder='Pandey' name='last_name' value={lname} onChange={(e)=> { setlname(e.target.value); if (errors.last_name) setErrors(prev=>({...prev, last_name: ""})); }} />
+                  {errors.last_name && <span className='text-xs text-red-400 mt-1'>{errors.last_name}</span>}
                 </div>
                 <div className='flex flex-col justify-center'>
                   <label className='opacity-60' htmlFor="email">Email</label>
-                  <input className='bg-[#4e5665] bg-opacity-20 placeholder:opacity-30 pl-[1rem] h-[2.3rem] rounded-md' type="email" id='email' placeholder='abcde@fgh.com' name='reply_to' value={email} onChange={(e)=> setemail(e.target.value)} />
+                  <input
+                    className={`bg-[#4e5665] bg-opacity-20 placeholder:opacity-30 pl-[1rem] h-[2.3rem] rounded-md ${errors.reply_to ? 'ring-2 ring-red-500' : ''}`}
+                    type="email" id='email' placeholder='abcde@fgh.com' name='reply_to' value={email} onChange={(e)=> { setemail(e.target.value); if (errors.reply_to) setErrors(prev=>({...prev, reply_to: ""})); }} />
+                  {errors.reply_to && <span className='text-xs text-red-400 mt-1'>{errors.reply_to}</span>}
                 </div>
                 
                 <div className='flex flex-col justify-center'>
                   <label className='opacity-60' htmlFor="message">Your Message</label>
-                  <input className='bg-[#4e5665] bg-opacity-20 pl-[1rem] h-[12rem] rounded-md' type="text" name='message' id='message'/>
+                  <input className={`bg-[#4e5665] bg-opacity-20 pl-[1rem] h-[12rem] rounded-md ${errors.message ? 'ring-2 ring-red-500' : ''}`} type="text" name='message' id='message'/>
+                  {errors.message && <span className='text-xs text-red-400 mt-1'>{errors.message}</span>}
                 </div>
-                <button className='liquid btn w-[25%] h-[50px] flex justify-center items-center' type="submit">Send</button>
+                <button className='liquid btn w-[25%] h-[50px] flex justify-center items-center' type="submit" disabled={sending}>{sending ? 'Sending...' : 'Send'}</button>
               </form>
             </div>
 

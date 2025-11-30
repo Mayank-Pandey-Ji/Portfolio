@@ -148,8 +148,15 @@ const Home = () => {
 
                 </div>
 
-                <div className="description text-white opacity-65 mt-10">
-                I’m a 3rd-year BTech student in Electronics, passionate about web development and problem-solving. Proficient in the MERN stack and DSA, I’m honing my skills on platforms like LeetCode and CodeChef. Beyond coding, I love football, sketching, and gaming, and I’ve mentored over 10,000 students as a tutor. I’m always eager to learn, grow, and collaborate to build impactful solutions.
+                <div className="description text-white opacity-65 mt-10 font-fira">
+                I’m a final-year BTech student in Electronics, passionate about Web Development, Data Science, and Machine Learning. I work confidently with the MERN stack and also explore ML models and analytics to understand data-driven decision-making. I actively sharpen my problem-solving skills through DSA on platforms like LeetCode and CodeChef.
+                <br />
+                <br />
+
+Beyond development, I enjoy football, sketching, and gaming. I’ve also mentored over 10,000 students as a tutor, helping them solve doubts and achieve their academic goals.
+<br />
+                <br />
+I’m always eager to learn, grow, and collaborate on impactful projects whether it's building user-focused web apps or experimenting with intelligent ML solutions.
                 </div>
 
                 <div className="resume mt-7">

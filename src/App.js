@@ -1,4 +1,3 @@
-import './App.css';
 import Greet from './pages/Greet'
 import Home from './pages/Home'
 import About from './pages/About'

@@ -112,7 +112,7 @@ const About = () => {
 
       <Navbar  />
 
-        <div className="first_section md:flex md:flex-row flex flex-col sm:max-w-[1300px] items-center md:pt-[75rem] sm:pt-[200rem] pt-[225rem] md:gap-0 gap-4">
+        <div className=" font-fira first_section md:flex md:flex-row flex flex-col sm:max-w-[1300px] items-center md:pt-[75rem] sm:pt-[200rem] pt-[225rem] md:gap-0 gap-4">
           <motion.div 
           
           
@@ -128,7 +128,7 @@ const About = () => {
               </h1>
               <div className="mid-part text-xl w-[92%] ml-5">
                 <p className='text-white'>Hi Everyone, I am <span className='text-green-300'>Mayank Pandey</span> from <span className='text-green-300'>Mirzapur</span>, Uttar Pradesh, <span className='text-green-300' >India</span>.</p>
-                <p className='text-white' >I am currently pursuing a <span className='text-green-300' >B.Tech</span> degree from <span className='text-green-300'>Kamla Nehru Institute of Technology</span>, Sultanpur. I am currently in my <span className='text-green-300' >3rd</span> year.</p>
+                <p className='text-white' >I am currently pursuing a <span className='text-green-300' >B.Tech</span> degree from <span className='text-green-300'>Kamla Nehru Institute of Technology</span>, Sultanpur. I am currently in my <span className='text-green-300' >Final</span> year.</p>
               </div>
               <p className=' text-white text-xl ml-5'>Apart from coding, some other activities that I love to do!</p>
               <div className='flex flex-col text-white ml-[3rem] -mt-8 text-xl' >
@@ -176,7 +176,7 @@ const About = () => {
           </motion.div>
         </div>
 
-        <div className="skillset_section text-white flex flex-col pt-[5rem] items-center gap-[4rem]">
+        <div className=" font-fira skillset_section text-white flex flex-col pt-[5rem] items-center gap-[4rem]">
               <h1 className='text-5xl sm:px-0 px-6' >Professional <span className='text-green-300'>Skillset</span></h1>   
               <div className='row1 md:flex md:flex-row flex flex-col md:gap-[6rem] gap-[3rem]'>
                                     
@@ -302,7 +302,7 @@ const About = () => {
               </div>
         </div>
 
-        <div className="tools_I_used text-white flex flex-col items-center gap-[4rem] pt-[8rem] pb-[6rem]">
+        <div className=" font-fira tools_I_used text-white flex flex-col items-center gap-[4rem] pt-[8rem] pb-[6rem]">
               <h1 className='text-5xl'><span className='text-green-300' >Tools</span> I use</h1>
               <div className='md:flex md:flex-row flex flex-col md:gap-[6rem] gap-[3rem]'>
                   <div className='holographic-card'>
